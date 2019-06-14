@@ -1,0 +1,59 @@
+{
+  "name": "sandbox",
+  "version": "0.0.0",
+  "description": "A sandbox for rapidly prototyping a Node server with client bundle with TypeScript support",
+  "main": "index.js",
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "npm-run-all --parallel -l build:*",
+    "build:client": "webpack --config webpack.client.js",
+    "build:server": "webpack --config webpack.server.js",
+    "lint": "npm run lint:js",
+    "lint:js": "tslint --project tsconfig.json 'src/**/*.ts{,x}'",
+    "serve": "node dist/server.js",
+    "start": "npm-run-all --parallel -l start:*",
+    "start:client": "webpack-dev-server --config webpack.client.js --hot --env.dev",
+    "start:server": "npm run build:server -- --hot --env.dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/petermikitsh/sandbox.git"
+  },
+  "author": "Peter Mikitsh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/petermikitsh/sandbox/issues"
+  },
+  "homepage": "https://github.com/petermikitsh/sandbox#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.3.3",
+    "@types/webpack-env": "^1.13.9",
+    "babel-loader": "^8.0.6",
+    "babel-preset-web": "0.0.1-alpha.1",
+    "html-webpack-plugin": "^3.2.0",
+    "npm-run-all": "^4.1.5",
+    "open-browser-webpack-plugin": "0.0.5",
+    "rimraf": "^2.6.3",
+    "start-server-webpack-plugin": "^2.2.5",
+    "stats-webpack-plugin": "^0.7.0",
+    "tslint": "^5.17.0",
+    "tslint-config-airbnb": "^5.11.1",
+    "typescript": "^3.5.2",
+    "webpack": "^4.34.0",
+    "webpack-cli": "^3.3.4",
+    "webpack-dev-server": "^3.7.1",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "dependencies": {
+    "@feathersjs/express": "^1.3.1",
+    "@feathersjs/feathers": "^3.3.1",
+    "express": "^4.17.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "stoppable": "^1.1.0"
+  }
+}
