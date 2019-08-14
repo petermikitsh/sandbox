@@ -7,6 +7,7 @@ module.exports = function (env) {
   const devMode = env && env.dev;
   return {
     devServer: {
+      contentBase: path.resolve('static'),
       historyApiFallback: {
         index: '/public'
       },
