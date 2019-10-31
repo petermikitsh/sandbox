@@ -1,6 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { App } from './app';
+import csvtojson from "csvtojson";
 
-const mountNode = document.getElementById('app');
-ReactDOM.render(<App />, mountNode);
+const csv = `firstname,lastname,birthmonth
+john,doe,march`;
+
+csvtojson()
+  .fromString(csv)
+  .subscribe(d => {
+    console.log(d);
+  })
+  .on("error", error => {
+    console.log("error", error);
+  });

@@ -28,6 +28,9 @@ module.exports = function (env) {
         }
       ]
     },
+    // node: {
+    //   fs: 'empty'
+    // },
     optimization: {
       // Uncomment for more detailed bundle stats
       // concatenateModules: false,
