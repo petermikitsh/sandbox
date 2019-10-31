@@ -28,6 +28,7 @@
   "homepage": "https://github.com/petermikitsh/sandbox#readme",
   "devDependencies": {
     "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.3.3",
@@ -51,9 +52,11 @@
   "dependencies": {
     "@feathersjs/express": "^1.3.1",
     "@feathersjs/feathers": "^3.3.1",
+    "@platform-ui/anjuna-react": "^1.0.0-rc.14",
     "express": "^4.17.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "stoppable": "^1.1.0"
+    "stoppable": "^1.1.0",
+    "tslib": "^1.10.0"
   }
 }
